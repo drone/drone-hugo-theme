@@ -1,0 +1,47 @@
+.width(@value) {
+	width: @value;
+	min-width: @value;
+	max-width: @value;
+}
+
+.height(@value) {
+	height: @value;
+	min-height: @value;
+	max-height: @value;
+}
+
+.no-select() {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.font-smoothing() {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.font-smoothing-auto() {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+}
+
+.material-icons(@content) {
+	font-family: 'Material Icons';
+	font-weight: 400;
+	font-style: normal;
+	font-size: 24px;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	display: inline-block;
+	word-wrap: normal;
+	-moz-font-feature-settings: 'liga';
+	font-feature-settings: 'liga';
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
+	content: @content;
+}

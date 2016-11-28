@@ -1,0 +1,487 @@
+
+html, body {
+	font-family: Roboto;
+	font-weight: 400;
+}
+
+//
+// Header
+//
+
+body > header {
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 20px;
+	background: #37474F;
+	.no-select();
+
+	nav {
+		display:block;
+		box-sizing: border-box;
+		background: url(logo.svg);
+		background-size: 42px;
+		background-position: 15px 15px;
+		background-repeat-x: no-repeat;
+		background-repeat-y: no-repeat;
+		background-repeat: no-repeat;
+		padding-left: 68px;
+
+		text-align:right;
+		padding-right:40px;
+
+		a {
+			color: rgba(255,255,255,0.6);
+			text-decoration: none;
+			font-weight: 400;
+			font-size: 16px;
+			margin-left: 6px;
+			line-height: 26px;
+			display: inline-block;
+		  padding: 23px 3px 0px 3px;
+
+			&.selected {
+				color: #FFF;
+			}
+
+			&:hover,
+			&:selected,
+			&:selected:hover {
+				color: #FFF;
+			}
+		}
+	}
+}
+
+//
+// Menu
+//
+
+menu {
+	margin: 0px;
+	padding:0px;
+	margin-bottom:20px;
+	text-align: right;
+}
+menu a {
+	text-decoration: none;
+	background: #00BFA5;
+	font-weight: 400;
+	padding:10px 20px;
+	border-radius: 2px;
+	color: #FFF;
+	display:inline-block;
+	cursor: pointer;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.filter {
+	background: #f5f5f5;
+	color: #999;
+	text-transform: uppercase;
+	white-space: nowrap;
+	margin: 0px;
+	margin-bottom:40px;
+	display: block;
+	font-size: 16px;
+	line-height:24px;
+	padding:25px;
+	.no-select();
+}
+.filter .material-icons {
+	float: right;
+	color: #999;
+}
+
+
+//
+// Main
+//
+
+section {
+	margin: 0px auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	max-width: 800px;
+}
+
+.list section article {
+	padding: 30px 20px;
+	border-top: 1px solid #EEE;
+}
+section article h2 a {
+	color: #000;
+	text-decoration: none;
+	font-weight: 400;
+	font-size:22px;
+}
+section article h2 a:hover {
+  color: #00BFA5;
+}
+section article h2 {
+	margin: 0px;
+	margin-bottom: 12px;
+	.no-select();
+}
+
+main {
+	header {
+		margin: 0px;
+		padding: 0px;
+		background-color: #37474F;
+
+		div {
+			max-width: 800px;
+			margin: 0px auto;
+			padding: 0px;
+			padding-top: 35px;
+			padding-bottom: 40px;
+		}
+		h1 {
+			font-weight: 300;
+			font-size: 46px;
+			line-height: 70px;
+			color: #fff;
+			text-align: center;
+			margin: 0px;
+			letter-spacing: 0.5px;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+		input {
+			border: 0;
+			font-size: 18px;
+			font-weight: 400;
+			padding: 18px;
+			border-radius: 3px;
+			display: block;
+			color: rgba(0,0,0,.7);
+			width: 100%;
+			box-sizing: border-box;
+			outline: none;
+			font-family: Roboto;
+		}
+		p {
+			color: #FFF;
+			text-align: center;
+			max-width: 500px;
+			margin: 0px auto;
+			line-height: 25px;
+			font-size: 18px;
+			font-weight: 300;
+			margin-bottom: 40px;
+			user-select: none;
+			-webkit-user-select: none;
+			user-select: none;
+			-webkit-user-select: none;
+		}
+	}
+}
+
+// override default placeholder
+::-webkit-input-placeholder {
+	color: rgba(0,0,0,.4);
+	font-weight: 300;
+}
+
+//
+// Tags
+//
+
+.tags {
+	display: inline-block;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+.tags li {
+	display: inline-block;
+}
+
+.tag {
+	.no-select();
+
+	background: #f5f5f5;
+	color: #999;
+	text-transform: uppercase;
+	white-space: nowrap;
+	margin: 0px 2px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 12px;
+	padding:5px 10px;
+	cursor: pointer;
+
+	&:hover {
+	  color: #00BFA5;
+	}
+}
+
+.author {
+	// .font-smoothing();
+	.no-select();
+
+	color: #999;
+	font-weight: 400;
+	margin-right:5px;
+	font-size: 15px;
+}
+
+//
+// Single Page
+//
+
+.single {
+
+	main {
+
+		header {
+			background: #FFF;
+			border-bottom: 1px solid #E5E5E5;
+
+			div {
+				margin: 0px auto;
+				max-width: 800px;
+				padding: 40px 0px;
+			}
+
+			h1 {
+				color: #000;
+				text-align: left;
+				font-size: 30px;
+				font-weight: 400;
+				line-height: 36px;
+				margin: 0px;
+				margin-bottom: 5px;
+			}
+
+			p {
+				margin:0px;
+				padding:0px;
+				color: #000;
+				text-align: left;
+				font-size: 16px;
+				font-weight: 400;
+				.font-smoothing();
+			}
+		}
+	}
+}
+
+//
+// Alerts
+//
+
+.alert {
+	background: #e3f8ff;
+	color: #00b0e9;
+	padding: 20px;
+	margin: 30px 0px;
+
+	&:before {
+		.material-icons('lightbulb_outline');
+		float: left;
+	}
+
+	p {
+		padding: 0px;
+		margin: 0px !important;
+		font-size: 15px !important;
+		padding-top: 0px;
+		padding-left:40px;
+		font-weight:400;
+
+		.font-smoothing-auto();
+	}
+
+	// Alert warning
+	&.alert-warn {
+		// background: #ffeed7;
+		// color: #f18902;
+
+		background: #FFECB3;
+		color: #FF8F00;
+
+		&:before {
+			content: 'error_outline';
+		}
+	}
+
+	// Alert error
+	&.alert-error {
+		background: #ffe3eb;
+		color: #e80044;
+
+		&:before {
+			content: 'error_outline';
+		}
+	}
+
+	a {
+		color: #00b0e9 !important;
+		text-decoration: underline !important;
+	}
+}
+
+// when the alert appears as the first component in the markdown
+// section we should override and remove top-margin.
+#markdown > .alert:first-child {
+	margin-top: 0px;
+}
+
+//
+// Markdown
+//
+
+#markdown {
+	font-size: 16px;
+	line-height: 24px;
+  // padding-top: 10px;
+  // font-family: "Roboto";
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+
+	ol,
+	ul {
+		margin: 30px 0px;
+		margin-left:20px;
+		list-style:disc;
+	}
+
+	p {
+		margin-bottom:30px;
+	}
+
+	p, li, td, dd {
+		&> code {
+			.font-smoothing-auto();
+
+			font-size: 14px;
+			background: rgba(236, 239, 241, 0.7);
+			border-radius:3px;
+			padding: 0px 5px;
+			font-family: monospace;
+			border:1px solid #ECEFF1;
+			line-height: 18px;
+		}
+	}
+
+	table {
+		width:100%;
+		margin:30px 0px;
+		border-collapse: collapse;
+		border: 1px solid #eee;
+
+		th, td {
+			text-align: left;
+			padding: 8px;
+			border: 1px solid #eee;
+		}
+
+		th {
+			padding-left:10px;
+			font-weight:700;
+		}
+	}
+
+	dl {
+		margin-top:30px;
+
+		dt {
+			.font-smoothing-auto();
+
+			font-size: 15px;
+			background: rgba(236, 239, 241, 0.7);
+			border-radius:3px;
+			padding: 0px 5px;
+			font-family: monospace;
+			border:1px solid #ECEFF1;
+			display:inline-block;
+			margin:0px;
+			margin-bottom: 3px;
+			line-height: 20px;
+		}
+
+		dd {
+			margin-bottom: 20px;
+			line-height: 22px;
+			font-size: 15px;
+			padding-left: 5px;
+		}
+	}
+
+	pre {
+		.font-smoothing-auto();
+
+		padding: 20px 30px;
+		margin: 0px;
+		background: rgba(236, 239, 241, 0.5);
+		margin-bottom: 40px;
+		overflow-y: auto;
+
+		code {
+			background: transparent;
+			font-size: 14px;
+			font-weight: normal;
+			font-family: monospace;
+			line-height: 20px;
+			padding: 0px;
+			display: block;
+		}
+
+		&+ pre{
+		  margin-top: -30px;
+		}
+	}
+
+
+			h1 {
+				font-size: 28px;
+				line-height: 48px;
+				border-top: 1px solid #EEE;
+				padding-top: 10px;
+				margin-top: 40px;
+				margin-bottom: 30px;
+			}
+
+			h2 {
+
+			}
+
+			h3 {
+
+			}
+
+	// #markdown blockquote {
+	//   background:#f2f2f2;
+	//   margin-left:0px;
+	//   padding: 20px 20px;
+	//   border-left: 5px solid #AAA;
+	//   color:#666;
+	//   margin-bottom:30px;
+	// }
+	// #markdown blockquote p {
+	//   margin: 0px;
+	//   padding: 0px;
+	// }
+
+	// the first paragraph in the markdown section should not have
+	// any top padding or margin.
+	&> p:first-child {
+		margin-top: 0px;
+		padding-top: 0px;
+	}
+
+	// the first header in the markdown section should not have
+	// any top padding or margin.
+	&> h1:first-child {
+		margin-top: 0px;
+		border-top: 0px;
+		padding-top: 0px;
+	}
+
+	@media (max-width: 800px) {
+		padding: 40px;
+	}
+}

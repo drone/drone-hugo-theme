@@ -1,0 +1,23 @@
+// lessc -x static/index.less static/dist/style.min.css
+
+// globals
+@import "globals/_mixins.less";
+@import "globals/_colors.less";
+@import "globals/_fonts.less";
+
+// vendored styles
+@import "vendor/reset.less";
+@import "vendor/highlight.less";
+
+// modules
+@import "modules/alert.less";
+@import "modules/card.less";
+@import "modules/footer.less";
+@import "modules/header.less";
+@import "modules/hero.less";
+@import "modules/tag.less";
+
+// pages
+@import "layouts/base.less";
+@import "layouts/list.less";
+@import "layouts/single.less";

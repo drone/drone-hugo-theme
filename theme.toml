@@ -1,0 +1,8 @@
+name = "Drone"
+license = "MIT"
+licenselink = "https://github.com/drone/drone-hugo-theme/blob/master/LICENSE.md"
+min_version = 0.17
+
+[author]
+  name = "Brad Rydzewski"
+  homepage = "https://github.com/bradrydzewski"
