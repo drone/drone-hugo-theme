@@ -24,16 +24,16 @@
 		<main>
 			<header>
 				<div>
-					<h1>Tutorials</h1>
-					<p>Follow along with one of our continuous integration & continuous delivery tutorials.</p>
-					<input type="text" placeholder="Search Tutorials" />
+					<h1>{{ .Site.Params.heading }}</h1>
+					<p>{{ .Site.Params.tagline }}</p>
+					<input type="text" placeholder="{{ .Site.Params.actions.search }}" />
 				</div>
 			</header>
 
 			<section>
 				{{ if .IsHome -}}
 				<menu>
-					<a href="https://github.com/drone/drone-tutorials">Write a Tutorial</a>
+					<a href="https://github.com/drone/drone-tutorials">{{ .Site.Params.actions.create }}</a>
 				</menu>
 				{{ else }}
 					<div class="filter">
