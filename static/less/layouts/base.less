@@ -62,6 +62,13 @@ menu {
 	margin-bottom:20px;
 	text-align: right;
 }
+
+@media (max-width: 800px) {
+	menu {
+		padding: 0px 40px;
+	}
+}
+
 menu a {
 	text-decoration: none;
 	background: #00BFA5;
@@ -137,6 +144,17 @@ main {
 			padding-top: 35px;
 			padding-bottom: 40px;
 		}
+
+		@media (max-width: 800px) {
+			div {
+				padding-left: 40px;
+				padding-right: 40px;
+				input {
+					display: none;
+				}
+			}
+		}
+
 		h1 {
 			font-weight: 300;
 			font-size: 46px;
@@ -244,7 +262,11 @@ main {
 				margin: 0px auto;
 				max-width: 800px;
 				padding: 40px 0px;
+					@media (max-width: 800px) {
+						padding: 40px;
+					}
 			}
+
 
 			h1 {
 				color: #000;
@@ -482,6 +504,6 @@ main {
 	}
 
 	@media (max-width: 800px) {
-		padding: 40px;
+		padding: 0px 40px;
 	}
 }
