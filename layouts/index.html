@@ -30,37 +30,42 @@
 				</div>
 			</header>
 
-			<section>
-				{{ if .IsHome -}}
-				<menu>
-					<a href="https://github.com/drone/drone-tutorials">{{ .Site.Params.actions.create }}</a>
-				</menu>
-				{{ else -}}
-					<div class="filter">
+			{{ if .IsHome -}}
+			<menu>
+				<a href="https://github.com/drone/drone-tutorials">{{ .Site.Params.actions.create }}</a>
+			</menu>
+			{{ else -}}
+				<div class="filter">
+					<div class="filter-inner">
 						<a href="{{ .Site.BaseURL }}">
 							<i class="material-icons">close</i>
 						</a>
 						<span>{{ .Title }}</span>
 					</div>
-				{{ end -}}
+				</div>
+			{{ end -}}
+
+			<section class="{{ lower .Site.Params.heading }}">
 				{{- $base := .Site.BaseURL -}}
-				{{- range .Data.Pages -}}
+				{{- range .Data.Pages }}
 				<article>
-					<h2>
-						<a href="{{ .Permalink }}">{{ .Title }}</a>
-					</h2>
+					<div>
+						<h2>
+							<a href="{{ .Permalink }}">{{ .Title }}</a>
+						</h2>
 
-					{{- if .Params.author }}
-					<span class="author">by {{ .Params.author }}</span>
-					{{ end -}}
+						{{- if .Params.author }}
+						<span class="author">by {{ .Params.author }}</span>
+						{{ end -}}
 
-					<ul class="tags">
-					{{- range .Params.tags }}
-						<li>
-							<a class="tag" href="{{ $base }}tags/{{ . }}">{{ . }}</a>
-						</li>
-					{{ end -}}
-					</ul>
+						<ul class="tags">
+						{{- range .Params.tags }}
+							<li>
+								<a class="tag" href="{{ $base }}tags/{{ . }}">{{ . }}</a>
+							</li>
+						{{ end -}}
+						</ul>
+					</div>
 				</article>
 				{{ end }}
 			</section>

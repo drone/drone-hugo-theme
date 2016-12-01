@@ -57,10 +57,12 @@ body > header {
 //
 
 menu {
-	margin: 0px;
-	padding:0px;
-	margin-bottom:20px;
+	padding: 0px;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 20px;
 	text-align: right;
+	max-width: 800px;
 }
 
 @media (max-width: 800px) {
@@ -82,23 +84,7 @@ menu a {
 	-webkit-user-select: none;
 }
 
-.filter {
-	background: #f5f5f5;
-	color: #999;
-	text-transform: uppercase;
-	white-space: nowrap;
-	margin: 0px;
-	margin-bottom:40px;
-	display: block;
-	font-size: 16px;
-	line-height:24px;
-	padding:25px;
-	.no-select();
-}
-.filter .material-icons {
-	float: right;
-	color: #999;
-}
+
 
 
 //
@@ -110,6 +96,10 @@ section {
 	margin-top: 40px;
 	margin-bottom: 40px;
 	max-width: 800px;
+}
+
+.list section {
+	margin-top: 20px;
 }
 
 .list section article {
