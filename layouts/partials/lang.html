@@ -1,0 +1,55 @@
+<div class="lang">
+{{- $lang := .Lang }}
+{{- $base := .Site.BaseURL }}
+<select onchange="if (this.value) window.location.href=this.value">
+	{{- range .Site.Languages }}
+	<option value="{{ $base }}{{ .Lang }}" {{ if eq .Lang $lang }} selected{{ end }}>{{ .Lang }}</option>
+	{{- end }}
+</select>
+
+<style>
+.lang {
+	display: inline-block;
+	text-transform: uppercase;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.1);
+	margin-left: 20px;
+}
+.lang select {
+  border: none;
+  background: none;
+	background-image: none;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  color: rgba(255,255,255,0.6);
+	font-family: "Roboto";
+  font-size:14px;
+  display: inline-block;
+  text-align: center;
+  padding:0px 10px;
+  margin:0px;
+	text-transform: uppercase;
+	box-shadow: none;
+	box-sizing: border-box;
+
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	cursor: pointer;
+
+	-webkit-user-select: none;
+		 -moz-user-select: -moz-none;
+			-ms-user-select: none;
+					user-select: none;
+
+	-webkit-appearance: none;
+		 -moz-appearance: radio-container;
+					appearance: none;
+}
+.lang select:focus {
+	outline: none;
+}
+</style>
+</div>
