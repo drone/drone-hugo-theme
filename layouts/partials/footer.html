@@ -1,1 +1,12 @@
-
+<footer>
+	<p>Copyright © {{ .Now.Year }} Drone.IO Inc.</p>
+	{{- $lang := .Lang }}
+	{{- $base := .Site.BaseURL }}
+	<ul>
+		{{ range .Site.Languages }}
+		<li>
+			<a href="{{ $base }}{{ .Lang }}">{{ .LanguageName }}</a>
+		</li>
+		{{- end }}
+	</ul>
+</footer>

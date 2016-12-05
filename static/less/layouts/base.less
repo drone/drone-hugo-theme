@@ -14,7 +14,7 @@ body > header {
 	background: #37474F;
 	.no-select();
 
-	nav {
+	&> nav {
 		display:block;
 		box-sizing: border-box;
 		background: url(../logo.svg);
@@ -28,7 +28,15 @@ body > header {
 		text-align:right;
 		padding-right:40px;
 
-		a {
+		@media (max-width: 800px) {
+			padding: 20px;
+			&> a {
+				line-height: 36px !important;
+				display: block !important;
+			}
+		}
+
+		&> a {
 			color: rgba(255,255,255,0.6);
 			text-decoration: none;
 			font-weight: 400;
