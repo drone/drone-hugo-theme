@@ -1,55 +1,27 @@
-<div class="lang">
-{{- $lang := .Lang }}
-{{- $base := .Site.BaseURL }}
-<select onchange="if (this.value) window.location.href=this.value">
-	{{- range .Site.Languages }}
-	<option value="{{ $base }}{{ .Lang }}" {{ if eq .Lang $lang }} selected{{ end }}>{{ .Lang }}</option>
-	{{- end }}
-</select>
+{{ if eq .Lang "en" }}
+<a hidden class="infobar infobar-language infobar-fr" href="fr{{ .URLPath.URL | relURL }}">View documentation in Français</a>
+<a hidden class="infobar infobar-language infobar-es" href="es{{ .URLPath.URL | relURL }}">View documentation in Español</a>
+<a hidden class="infobar infobar-language infobar-pt" href="pt{{ .URLPath.URL | relURL }}">View documentation in Português</a>
+<a hidden class="infobar infobar-language infobar-zh-ch" href="zh-cn{{ .URLPath.URL | relURL }}">View documentation in 中文(简体)</a>
+<a hidden class="infobar infobar-language infobar-zh-tw" href="zh-tw{{ .URLPath.URL | relURL }}">View documentation in 中文(台灣)</a>
+<a hidden class="infobar infobar-language infobar-ja" href="ja{{ .URLPath.URL | relURL }}">View documentation in 日本語</a>
+<a hidden class="infobar infobar-language infobar-ru" href="ru{{ .URLPath.URL | relURL }}">View documentation in pусский</a>
+<a hidden class="infobar infobar-language infobar-hu" href="hu{{ .URLPath.URL | relURL }}">View documentation in magyar</a>
 
-<style>
-.lang {
-	display: inline-block;
-	text-transform: uppercase;
-	border-radius: 50%;
-	background: rgba(255,255,255,0.1);
-	margin-left: 20px;
-}
-.lang select {
-  border: none;
-  background: none;
-	background-image: none;
-  -webkit-appearance: none;
-  display: block;
-  outline: none;
-  color: rgba(255,255,255,0.6);
-	font-family: "Roboto";
-  font-size:14px;
-  display: inline-block;
-  text-align: center;
-  padding:0px 10px;
-  margin:0px;
-	text-transform: uppercase;
-	box-shadow: none;
-	box-sizing: border-box;
+<script defer>
+var languages = [];
 
-	width: 38px;
-	height: 38px;
-	line-height: 38px;
-	text-align: center;
-	cursor: pointer;
+{{ range .Site.Languages }}
+languages.push("{{ lower .Lang }}");
+{{- end }}
 
-	-webkit-user-select: none;
-		 -moz-user-select: -moz-none;
-			-ms-user-select: none;
-					user-select: none;
-
-	-webkit-appearance: none;
-		 -moz-appearance: radio-container;
-					appearance: none;
-}
-.lang select:focus {
-	outline: none;
-}
-</style>
-</div>
+navigator.languages.forEach(function(language) {
+  if (languages.indexOf(language.toLowerCase()) != -1) {
+    var infobar = document.querySelector(".infobar-"+language.toLowerCase());
+    if (infobar) {
+      infobar.removeAttribute("hidden");
+    }
+  }
+});
+</script>
+{{ end }}

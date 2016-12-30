@@ -1,7 +1,11 @@
+{{ $currentNode := . }}
 <header>
 	<nav>
 		{{- range .Site.Menus.main -}}
-		<a href="{{ .URL }}" class="{{ .Pre }}">{{ .Name }}</a>
+
+		<a href="{{ .URL }}" {{ if or ($currentNode.IsMenuCurrent "main" .) ($currentNode.HasMenuCurrent "main" .) }}
+			class="selected"{{end}}>{{ default (i18n .Identifier) .Name }}</a>
+
 		{{ end -}}
 	</nav>
 </header>

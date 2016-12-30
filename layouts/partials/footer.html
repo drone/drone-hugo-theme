@@ -1,5 +1,5 @@
 <footer>
-	<p>Copyright © {{ .Now.Year }} Drone.IO Inc.</p>
+	<p>{{ .Site.Copyright }}</p>
 	{{- $lang := .Lang }}
 	{{- $base := .Site.BaseURL }}
 	<ul>
@@ -10,3 +10,6 @@
 		{{- end }}
 	</ul>
 </footer>
+
+<script src="{{ .Site.BaseURL }}dist/script.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>

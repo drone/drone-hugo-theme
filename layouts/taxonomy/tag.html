@@ -3,21 +3,15 @@
 	<head>
 		{{ partial "meta.html" . }}
 	</head>
-	<body class="list">
+	<body class="list taxonomy">
 		{{ partial "header.html" . }}
 
 		<main>
-			<header>
-				<div>
-					<h1>[Title]</h1>
-					<p>[Tagline Here]</p>
-					<input type="text" placeholder="Search" />
+			<div class="filter">
+				<div class="filter-inner">
+					<span>{{ .Title }}</span>
 				</div>
-			</header>
-
-			<menu>
-				<a href="#">[Action Here]</a>
-			</menu>
+			</div>
 
 			<section>
 				{{- range .Data.Pages }}

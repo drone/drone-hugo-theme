@@ -1,4 +1,5 @@
 
+.projects,
 .plugins {
 	display: flex;
 	flex-wrap: wrap;
@@ -9,6 +10,7 @@
 	}
 }
 
+.projects > article,
 .plugins > article {
 	border:none !important;
 	padding:0px !important;
@@ -74,5 +76,94 @@
 			margin-left: 0px !important;
 			margin-right: 0px !important;
 		}
+	}
+}
+
+
+.cards {
+	max-width: 700px;
+	margin: 60px auto;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (max-width: 800px) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+}
+
+.card {
+	padding:0px;
+	margin: 0px;
+	width: 50%;
+	margin-bottom:20px;
+	text-decoration: none;
+	display:block;
+
+	.card-inner {
+		padding: 30px;
+		border: 1px solid #EEE;
+		text-decoration: none;
+		display:block;
+	}
+
+	a.card-inner:hover {
+		border-color: #00BFA5;
+	}
+
+	&:nth-child(odd) {
+		.card-inner {
+			margin-right: 10px;
+		}
+	}
+
+	&:nth-child(even) {
+		.card-inner {
+			margin-left: 10px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		width: 100%;
+	}
+
+	h2 {
+		color: #000;
+		font-size: 22px;
+		text-align: center;
+	}
+
+	p {
+		margin: 10px 0px;
+		margin-bottom:0px;
+		line-height: 22px;
+		text-align: center;
+		font-size:15px;
+		color: #999;
+	}
+
+	.icon-api {
+		background-image: url("../icon_api.svg");
+	}
+
+	.icon-doc {
+		background-image: url("../icon_doc.svg");
+	}
+
+	.icon-install {
+		background-image: url("../icon_install.svg");
+	}
+
+	.icon-plugin {
+		background-image: url("../icon_plugin.svg");
+	}
+
+	.icon {
+		height:128px;
+		background-size:112px;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin:10px 0px;
 	}
 }

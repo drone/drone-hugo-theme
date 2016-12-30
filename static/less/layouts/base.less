@@ -2,6 +2,8 @@
 html, body {
 	font-family: Roboto;
 	font-weight: 400;
+	min-height: 100%;
+	min-width: 100%;
 }
 
 //
@@ -59,38 +61,6 @@ body > header {
 	}
 }
 
-//
-// Menu
-//
-
-menu {
-	padding: 0px;
-	margin: 0 auto;
-	margin-top: 40px;
-	margin-bottom: 20px;
-	text-align: right;
-	max-width: 800px;
-}
-
-@media (max-width: 800px) {
-	menu {
-		padding: 0px 20px;
-	}
-}
-
-menu a {
-	text-decoration: none;
-	background: #00BFA5;
-	font-weight: 400;
-	padding:10px 20px;
-	border-radius: 2px;
-	color: #FFF;
-	display:inline-block;
-	cursor: pointer;
-	user-select: none;
-	-webkit-user-select: none;
-}
-
 
 
 
@@ -113,6 +83,11 @@ section {
 	padding: 30px 20px;
 	border-top: 1px solid #EEE;
 }
+
+.list.taxonomy section article:first-child {
+	border:none;
+}
+
 section article h2 a {
 	color: #000;
 	text-decoration: none;
@@ -195,8 +170,8 @@ main {
 
 // override default placeholder
 ::-webkit-input-placeholder {
-	color: rgba(0,0,0,.4);
-	font-weight: 300;
+	color: rgba(0,0,0,.3);
+	font-weight: 400;
 }
 
 //
@@ -349,6 +324,15 @@ main {
 	margin-top: 0px;
 }
 
+#markdown > .alert p code {
+	border:none;
+	font-size:15px;
+	line-height: 21px;
+	display: inline-block;
+	background: rgba(0, 176, 233, 0.09);
+	// background: transparent;
+}
+
 //
 // Markdown
 //
@@ -454,6 +438,16 @@ main {
 		}
 	}
 
+	img {
+		max-width: 100%;
+	}
+
+	img[alt="github oauth setup"] {
+		max-height:500px;
+		border: 1px solid #EEE;
+		padding: 20px;
+	}
+
 
 			h1 {
 				font-size: 28px;
@@ -471,6 +465,11 @@ main {
 			h3 {
 
 			}
+
+		a, a:visited {
+			color: #3F51B5;
+			text-decoration: none;
+		}
 
 	// #markdown blockquote {
 	//   background:#f2f2f2;
@@ -502,5 +501,35 @@ main {
 
 	@media (max-width: 800px) {
 		padding: 0px 20px;
+	}
+}
+
+
+.home {
+	background: #f5f5f5;
+}
+
+.index {
+	section {
+		article:first-child {
+			margin-top:40px;
+			border-top: 0px;
+		}
+
+		// article > div {
+		// 	display: flex;
+		//
+		// 	h2 {
+		// 		margin-right: 20px;
+		// 		margin-bottom: 0px;
+		// 		min-width: 50%;
+		// 	}
+		//
+		// 	span {
+		// 		margin-top: 4px;
+		// 		margin-bottom: 0px;
+		// 		line-height: 22px;
+		// 	}
+		// }
 	}
 }
