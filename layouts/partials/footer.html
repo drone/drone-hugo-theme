@@ -13,3 +13,14 @@
 
 <script src="{{ .Site.BaseURL }}dist/script.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+{{ if .Site.Params.algolia_key }}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/2/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+	apiKey: "{{ .Site.Params.algolia_key }}",
+	indexName: "{{ .Site.Params.algolia_index }}",
+	inputSelector: 'input',
+	debug: false
+});
+</script>
+{{ end }}
