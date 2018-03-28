@@ -23,4 +23,19 @@
 	debug: false
 });
 </script>
+{{ else }}
+<script>
+	var s = document.createElement("style");
+	var input = document.querySelector("input");
+
+	document.head.appendChild(s);
+	input.addEventListener("input", function() {
+		var val = this.value.trim().toLowerCase();
+		var style = '';
+		if(val) {
+			style = 'article:not([data-search-text*="'+ val +'"]) { display: none; }';
+		}
+		s.innerHTML = style;
+	});
+</script>
 {{ end }}

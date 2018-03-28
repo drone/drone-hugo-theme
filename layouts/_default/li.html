@@ -1,19 +1,20 @@
-<article>
-	<div>
-		<h2>
-			<a href="{{ .Permalink }}">{{ .Title }}</a>
-		</h2>
-
-		{{- if .Params.author }}
-		<span class="author">by {{ .Params.author }}</span>
-		{{ end -}}
-
-		<ul class="tags">
-		{{- range .Params.tags }}
-			<li>
-				<a class="tag" href="tags/{{ . }}">{{ . }}</a>
-			</li>
-		{{ end -}}
-		</ul>
-	</div>
-</article>
+<article data-search-text="{{lower .Title }}">
+		<div>
+			<h2>
+				<a href="{{ .Permalink }}">{{ .Title }}</a>
+			</h2>
+	
+			{{- if .Params.author }}
+			<span class="author">by {{ .Params.author }}</span>
+			{{ end -}}
+	
+			<ul class="tags">
+			{{- range .Params.tags }}
+				<li>
+					<a class="tag" href="tags/{{ . }}">{{ . }}</a>
+				</li>
+			{{ end -}}
+			</ul>
+		</div>
+	</article>
+	
