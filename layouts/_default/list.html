@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    {{ partial "sidebar.html" . }}
+
+    <main>
+        <article>
+            <header>
+                <h1>{{ .Title }}</h1>
+            </header>
+            <section class="content">
+                {{ .Content }}
+
+                <div class="cards">
+                    {{ range .Pages }}                        
+                        <a href="{{ .Permalink }}">
+                            <span class="name">{{ .Title }}</span>
+                            {{ if .Description }}
+                            <span class="desc">{{ .Description }}</span>
+                            {{ end }}
+                        </a>
+                    {{ end }}
+
+                    {{ range .Sections }}                        
+                        <a href="{{ .Permalink }}">
+                            <span class="name">{{ .Title }}</span>
+                            {{ if .Description }}
+                            <span class="desc">{{ .Description }}</span>
+                            {{ end }}
+                        </a>
+                    {{ end }}
+                </div>
+            </section>
+        </article>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

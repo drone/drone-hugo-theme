@@ -1,0 +1,99 @@
+.search {
+    padding: 0px 26px;
+    max-width: 755px;
+    box-sizing: border-box;
+    text-align: center;
+
+    &> .algolia-autocomplete {
+        display: block;
+        width: 100%;
+    }
+
+    input {
+        border: none;
+        border-radius: 3px;
+        box-sizing: border-box;
+        background: rgba(255,255,255, 0.1);
+        color: #FFF;
+        font-size: 15px;
+        outline: none;
+        padding: 0px 15px;
+        width: 100%;
+        margin: 0px auto;
+        height: 38px;
+        // max-width: 578px;
+
+        // &:focus {
+        //     max-width: unset;
+        // }
+    }
+}
+
+// /* Main dropdown wrapper */
+// .algolia-autocomplete .ds-dropdown-menu {
+//     width: 500px;
+//   }
+  
+//   /* Main category (eg. Getting Started) */
+//   .algolia-autocomplete .algolia-docsearch-suggestion--category-header {
+//     color: darkgray;
+//     border: 1px solid gray;
+//   }
+  
+//   /* Category (eg. Downloads) */
+//   .algolia-autocomplete .algolia-docsearch-suggestion--subcategory-column {
+//     color: red;
+//   }
+  
+//   /* Title (eg. Bootstrap CDN) */
+//   .algolia-autocomplete .algolia-docsearch-suggestion--title {
+//     font-weight: bold;
+//     color: orange;
+//   }
+  
+//   /* Description description (eg. Bootstrap currently works...) */
+//   .algolia-autocomplete .algolia-docsearch-suggestion--text {
+//     font-size: 0.8rem;
+//     color: green;
+//   }
+  
+//   /* Highlighted text */
+//   .algolia-autocomplete .algolia-docsearch-suggestion--highlight {
+//     color: blue;
+//   }
+
+
+.algolia-autocomplete .ds-dropdown-menu:before {
+    border-top-color: #EFF0F2;
+    border-bottom-color: #EFF0F2;
+}
+.algolia-autocomplete .ds-dropdown-menu [class^=ds-dataset-] {
+    border: none !important;
+    border-radius: 3px !important;
+}
+
+.algolia-autocomplete .ds-dropdown-menu {
+    box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+    border: 1px solid #EFF0F2;
+}
+
+// .algolia-autocomplete .ds-dropdown-menu .ds-dataset-1 {
+//     position: fixed;
+//     top: 75px;
+//     bottom: 0px;
+//     left: 0px;
+//     right: 0px;
+// }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(255,255,255,0.3);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(255,255,255,0.5);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(255,255,255,0.5);
+}

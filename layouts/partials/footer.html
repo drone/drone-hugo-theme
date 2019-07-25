@@ -1,0 +1,35 @@
+<!-- overlay when the sidebar is expanded -->
+<div class="overlay" aria-hidden="true"></div>
+
+<!-- code to expand and collapse the sidebar -->
+<script>
+    function toggle(el) {
+        if (el.classList.contains("open")) {
+            el.classList.remove("open");
+        } else {
+            el.classList.add("open");
+        }
+    };
+    function toggleSidebar(e) {
+        toggle(document.querySelector(".sidebar"));
+        toggle(document.querySelector(".overlay"));
+    }
+    document.querySelector(".overlay").addEventListener("click", toggleSidebar);
+    document.querySelector("header .menu").addEventListener("click", toggleSidebar);
+    document.querySelector(".sidebar header button").addEventListener("click", toggleSidebar);
+</script>
+
+{{ if .Site.Params.algolia_key }}
+<!-- import docsearch dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+
+<!-- code to bootstrap docsearch -->
+<script>
+  docsearch({
+    apiKey: "{{ .Site.Params.algolia_key }}",
+    indexName: "{{ .Site.Params.algolia_index }}",
+    inputSelector: ".search input",
+    debug: false
+  });
+</script>
+{{ end }}

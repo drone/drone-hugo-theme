@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>{{ .Title }} | Drone</title>
+    <link href="/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    {{ partial "sidebar.html" . }}
+
+    <main>
+        <article>
+            <header>
+                <h1>{{ .Title }}</h1>
+            </header>
+            <section class="content">
+                {{ .Content }}
+
+                <ul>
+                    {{ range .Pages }} 
+                        <li>
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </li>   
+                    {{ end }}
+                </ul>
+            </section>
+        </article>
+    </main>
+    <div class="overlay" aria-hidden="true"></div>
+
+    <script>
+        function toggle(el) {
+            if (el.classList.contains("open")) {
+                el.classList.remove("open");
+            } else {
+                el.classList.add("open");
+            }
+        };
+        function toggleSidebar(e) {
+            toggle(document.querySelector(".sidebar"));
+            toggle(document.querySelector(".overlay"));
+        }
+        document.querySelector(".overlay").addEventListener("click", toggleSidebar);
+        document.querySelector("header .menu").addEventListener("click", toggleSidebar);
+        document.querySelector(".sidebar header button").addEventListener("click", toggleSidebar);
+    </script>
+  </body>
+</html>

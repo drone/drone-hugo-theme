@@ -1,0 +1,8 @@
+name = "Drone"
+license = "BlueOak-1.0.0"
+licenselink = "https://spdx.org/licenses/BlueOak-1.0.0.html"
+min_version = 0.50
+
+[author]
+  name = "Brad Rydzewski"
+  homepage = "https://github.com/bradrydzewski"

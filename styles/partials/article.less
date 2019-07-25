@@ -1,0 +1,32 @@
+
+@article-padding: 0px 0px 48px 0px;
+@article-margin: 0px 88px;
+@article-header-padding: 40px 0px;
+@article-header-margin: 0px 88px 32px 88px;
+@article-header-border: 2px solid #E6ECF1;
+@article-header-font-size: 32px;
+@article-header-font-weight: 500;
+
+article {
+    margin: @article-padding;
+    overflow: hidden;
+
+    header, section {
+         margin: @article-margin;
+    }
+
+    header {
+        padding: @article-header-padding;
+        border-bottom: @article-header-border;
+        margin: @article-header-margin;
+
+        h1 {
+            font-size: @article-header-font-size;
+            font-weight: @article-header-font-weight;
+        }
+    }
+
+    footer {
+        margin: @article-margin;
+    }
+}

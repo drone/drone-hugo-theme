@@ -1,0 +1,81 @@
+@header-border: 1px solid #D4DADF;
+@header-background: #FFFFFF;
+@header-box-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+@header-padding: 0 26px;
+@header-height: 80px;
+
+@logo-width: 30px;
+@logo-height: 30px;
+
+@menu-width: 30px;
+@menu-height: 30px;
+@menu-icon: "icons/menu.svg";
+@menu-icon-size: 28px;
+
+@title-font-size: 22px;
+@title-color: #1E375A;
+
+// the header is the main header component for the page.
+.header {
+    box-shadow: @header-box-shadow;
+    border-bottom: @header-border;
+    background-color: @header-background;
+    
+    align-items: center;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px auto;
+    z-index: 1;
+
+    .branding {
+        display: flex;
+        padding: @header-padding; // TODO re-think variable name
+    }
+
+    // logo is a wrapper element around an inline svg image
+    // of the site logo.
+    .logo {
+        width: @logo-width;
+        height: @logo-height;
+
+        img {
+            width: @logo-width;
+            height: @logo-height;
+        }
+    }
+
+    // menu button visible on small screen sizes. used to reveal
+    // the side menu.
+    .menu {
+        align-items: center;
+        cursor: pointer;
+        display: none;
+        height: @menu-width;
+        width: @menu-height;
+        background: data-uri(@menu-icon) no-repeat center center;
+        background-size: @menu-icon-size;
+    }
+
+    .title {
+        color: @title-color;
+        font-size: @title-font-size;
+        margin-left: 20px;
+        text-decoration: none;
+    }
+}
+
+// if the device size or window size is tablet or below the
+// logo is centered in the header and the expand menu button
+// is displayed.
+@media screen and
+    (max-width: 800px),
+    (max-device-width: 800px) {
+    
+    .header {
+        grid-template-columns: auto;
+        .search { display: none !important; }
+        .title  { display: none !important; }
+        .menu   { display: flex !important; }
+        .logo   { margin: 0px auto; }
+    }
+}

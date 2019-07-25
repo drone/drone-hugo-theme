@@ -1,0 +1,52 @@
+.home {
+    grid-template-columns: 100%;
+    grid-template-rows: @header-height auto;
+    grid-template-areas: "header" "sections";
+
+    .sections {
+        box-sizing: border-box;
+        padding: 0px 88px;
+        max-width: 1200px;
+        margin: 0px auto;
+        margin-bottom: 120px;
+
+        section {
+            margin-top: 60px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-rows: auto;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            a {
+                grid-template-rows: auto 100%;  
+
+                .name {
+                    font-size: 18px;
+                }
+            }
+
+            a.with-icon {
+                grid-template-rows: auto auto 100%;
+                display: grid;
+
+                .icon {
+                    margin-bottom: 20px;
+                }
+
+                img {
+                    width: 96px;
+                    height: 96px;
+                }
+            }
+        }
+    }
+}
+

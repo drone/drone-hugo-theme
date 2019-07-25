@@ -1,0 +1,31 @@
+
+// this file is compiled with less:
+//    lessc index.less index.css
+//
+// watch for changes and compile this file:
+//     fswatch -0 --recursive --exclude=".*" --include="\\.less$" . |
+//     xargs -0 -n1 lessc index.less index.css
+
+@import "reset.less";
+
+// pages
+@import "pages/base.less";
+@import "pages/home.less";
+@import "pages/list.less";
+@import "pages/single.less";
+
+// partials
+@import "partials/alert.less";
+@import "partials/article.less";
+@import "partials/aside.less";
+@import "partials/buttons.less";
+@import "partials/cards.less";
+@import "partials/content.less";
+@import "partials/header.less";
+@import "partials/overlay.less";
+@import "partials/search.less";
+@import "partials/sidebar.less";
+@import "partials/tree.less";
+
+// themes
+@import "themes/drone.less";

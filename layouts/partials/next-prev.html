@@ -1,0 +1,17 @@
+<footer class="next-prev{{ if and (.NextInSection) (not .PrevInSection) }} one-column{{ end }}{{ if and (.PrevInSection) (not .NextInSection) }} one-column{{ end }}">
+    {{ with .NextInSection }}
+    <a href="{{ .URL }}" class="prev">
+        <span class="icon"></span>
+        <span class="type">Previous</span>
+        <span class="name">{{ .Title }}</span>
+    </a>
+    {{ end }}
+
+    {{ with .PrevInSection }}
+    <a href="{{ .URL }}" class="next">
+        <span class="type">Next</span>
+        <span class="name">{{ .Title }}</span>
+        <span class="icon"></span>
+    </a>
+    {{ end }}
+</footer>

@@ -1,0 +1,118 @@
+
+
+// tree nodes
+@node-background: transparent;
+@node-background-hover: #E6ECF1;
+@node-color: #9daab6;
+@node-font-weight: 500;
+
+// active nodes
+@active-node-background: #FFFFFF;
+@active-node-color: #1CA4E4;
+@active-node-border-width: 1px 0px 1px 1px;
+@active-node-border-color: #E6ECF1;
+@active-node-border-style: solid;
+
+// root nodes descend from the root node
+@root-node-color: #5c697b;
+
+// node list
+@node-list-border-width: 0px 0px 0px 1px;
+@node-list-border-color: #E6ECF1;
+@node-list-border-style: solid;
+@node-list-margin: 0px 0px 0px 16px;
+
+.tree {
+    padding: 32px 0px 32px 24px;
+
+    ul {
+        margin: @node-list-margin;
+        border-width: @node-list-border-width;
+        border-color: @node-list-border-color;
+        border-style: @node-list-border-style;
+    }
+
+    // override the default style to remove the border
+    // for the root list item. The border helps signify
+    // depth and does not apply to the root item.s
+    &> ul {
+        border-left: 0px;
+        margin-left: 0px;
+    }
+
+    li a {
+        box-sizing: border-box;
+        color: @node-color;
+        display: block;
+        font-size: 14px;
+        font-weight: @node-font-weight;
+        line-height: 22px;
+        padding: 7px 24px 7px 16px;
+        text-decoration: none;
+        user-select: none;
+
+        &:hover {
+            background: @node-background-hover;
+            cursor: pointer;
+        }
+    }
+
+    details summary {
+        box-sizing: border-box;
+        list-style-image: none;
+        outline: none;
+        padding-right: 52px;
+        position: relative;
+
+        &:after {
+            content: "";
+            background: data-uri("icons/caret.svg") no-repeat center center;
+            background-size: 22px;
+            position: absolute;
+            margin-right: 16px;
+            width: 36px;
+            height: 36px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        &:hover {
+            background: @node-background-hover;
+            cursor: pointer;
+        }
+    }
+
+    // rotate the caret icon when the details section is
+    // expanded.
+    details[open] > summary:after {
+        transform: rotate(-270deg) translate(100%, 0%);
+        transform-origin: 100% 0;
+    }
+}
+
+.sidebar nav > ul > li > details > summary > a, 
+.sidebar nav > ul > li > a {
+    color: @root-node-color;
+}
+
+.sidebar li.active > details > summary:hover,
+.sidebar li.active > details > summary:hover a,
+.sidebar li.active > details > summary:hover a:hover {
+    background: @active-node-background;
+}
+
+.sidebar li.active > details > summary,
+.sidebar li.active > a {
+    background: @active-node-background;
+    color: @active-node-color;
+    margin-left: -1px;
+
+    border-width: @active-node-border-width;
+    border-color: @active-node-border-color;
+    border-style: @active-node-border-style;
+}
+
+.sidebar li.active > details > summary a {
+    color: @active-node-color;
+}

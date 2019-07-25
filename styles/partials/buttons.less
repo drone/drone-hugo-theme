@@ -1,0 +1,120 @@
+@next-icon: "icons/arrow_right.svg";
+@next-icon-hover: "icons/arrow_right_hover.svg";
+@prev-icon: "icons/arrow_left.svg";
+@prev-icon-hover: "icons/arrow_left_hover.svg";
+
+// next previous buttons, used to navigate to the next or
+// previous content in the document tree.
+.next-prev {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 24px;
+    margin-bottom: 24px;
+
+    a {
+        .card(); // card mixin
+
+        margin: 32px 0px;
+        margin-bottom: 0px;
+        padding: 16px;
+        color: @card-header-color;
+        user-select: none;
+        grid-template-rows: 20px auto;
+
+        &:hover {
+            border-color: @card-border-hover;
+
+            .name {
+                color: @card-header-color-hover;
+            }
+        }
+
+        .name {
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 1.5;
+            grid-column: 2;
+        }
+
+        .type {
+            text-decoration: none;
+        }
+    }
+
+    .prev {
+        display: grid;
+        grid-column: 1;
+        grid-template-columns: 30px auto;
+
+        .name {
+            grid-column: 2;
+            grid-row: 2;
+            text-align: right;
+        }
+
+        .type {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: right;
+            color: @card-body-color;
+            font-size: 12px;
+        }
+
+        .icon {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+            background: data-uri(@prev-icon) no-repeat center center;
+        }
+
+        &:hover .icon {
+            background-image: data-uri(@prev-icon-hover);
+        }
+    }
+
+    .next {
+        display: grid;
+        grid-column: 2;
+        grid-template-columns: auto 30px;
+
+        .name {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        
+        .type {
+            grid-column: 1;
+            grid-row: 1;
+            color: @card-body-color;
+            font-size: 12px;
+        }
+        
+        .icon {
+            grid-column: 2;
+            grid-row: 1 / span 2;
+            background: data-uri(@next-icon) no-repeat center center;
+        }
+
+        &:hover .icon {
+            background-image: data-uri(@next-icon-hover);
+        }
+    }
+
+    &.one-column {
+        .next,
+        .prev { grid-column: 1 / span 2; }
+    }
+}
+
+// if the device size or window size is phone the next and
+// previous buttons are stacked.
+@media screen and
+    (max-width: 480px),
+    (max-device-width: 480px) {
+
+    .next-prev {
+        grid-template-columns: 1fr;
+        .next { grid-column: 1; margin-top: 0px; }
+        .prev { grid-column: 1; margin-top: 0px; }
+    }
+}

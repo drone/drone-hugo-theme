@@ -1,0 +1,67 @@
+@sidebar-background: #F5F7F9;
+@sidebar-border-width: 0px 1px 0px 0px;
+@sidebar-border-color: #E6ECF1;
+@sidebar-border-style: solid;
+@sidebar-collapse-icon: "icons/arrow_left_grey.svg";
+
+.sidebar {
+    background: @sidebar-background;
+    border-width: @sidebar-border-width;
+    border-color: @sidebar-border-color;
+    border-style: @sidebar-border-style;
+
+    // the head is the section of the sidebar that displays
+    // the close button when the sidebar is expanded on
+    // devices with small screens.
+    // TODO(bradrydzewski) use a different name.
+    header {
+        display: none;
+        padding: 0px 26px;
+        align-items: center;
+        position: sticky;
+        top: 0px;
+
+        button {
+            width: 30px;
+            height: 30px;
+            align-items: center;
+            cursor: pointer;
+            background: data-uri(@sidebar-collapse-icon) no-repeat center center;
+        }
+    }
+}
+
+@media screen and
+    (max-width: 800px),
+    (max-device-width: 800px) {
+
+    .sidebar {
+        position: fixed;
+        top: 0px;
+        left: -301px;
+        bottom: 0px;
+        width: 300px;
+        z-index: 3;
+        overflow-x: hidden;
+        overflow-y: auto;
+        transition: left 0.2s ease-in-out;
+
+        &.open {
+            left: 0px;
+            display: block;
+            border-right: none !important;
+            box-shadow:
+                rgba(0, 0, 0, 0.1) 0px 0px 4px,
+                rgba(0, 0, 0, 0.1) 0px 4px 8px;
+        }
+
+        header {
+            background: @header-background;
+            display: flex;
+            box-sizing: border-box;
+            height: @header-height;
+            border-bottom: @header-border;
+            transition: left 0.2s ease-in-out;
+        }
+    }
+}

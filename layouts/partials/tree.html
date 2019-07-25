@@ -1,0 +1,43 @@
+
+{{ define "branch" }}
+    {{ $selected := .Selected }}
+
+    {{ if and (eq (len .Node.Pages) 0) (eq (len .Node.Sections) 0) }}
+    <li{{ if eq $selected .Node }} class="selected active"{{end}}>
+        <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
+    </li>
+    {{ else if .Node.Params.hide_children }}
+    <li{{ if eq $selected .Node }} class="selected active"{{ else if .Node.IsAncestor $selected }} class="selected active"{{ end }}>
+        <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
+    </li>
+    {{ else }}
+
+    <li{{ if eq $selected .Node }} class="selected active"{{end}}>
+        <details{{ if .Node.IsAncestor $selected }} open{{ end }}>
+            <summary>
+                <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
+            </summary>
+            <ul>
+            {{ range .Node.Pages }}
+            {{ template "branch" (dict "Node" .  "Selected" $selected) }}
+            {{ end }}
+
+            {{ range .Node.Sections }}
+            {{ template "branch" (dict "Node" .  "Selected" $selected) }}
+            {{ end }}
+            </ul>
+        </details>
+    </li>
+    {{ end }}
+{{ end }}
+
+{{ $selected := . }}
+{{ $node := . }}
+
+<nav class="tree">
+{{ range .Site.Sections }}
+    <ul>
+    {{ template "branch" (dict "Node" . "Selected" $selected) }}
+    </ul>
+    {{ end }}
+</nav>

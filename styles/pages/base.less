@@ -1,0 +1,92 @@
+// default font settings
+@font-size: 15px;
+@font-sans: 'Roboto', sans-serif; //-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+@font-mono: 'Roboto Mono', monospace; //Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace;
+@font-smoothing: auto;
+
+// default color
+@color: #1E375A;
+
+// default background
+@background: #FFFFFF;
+
+html, body {
+    background: @background;
+    color: @color;
+    font-family: @font-sans;
+    font-size: @font-size;
+    width: 100%;
+    height: 100%;
+
+    -webkit-font-smoothing: @font-smoothing;
+}
+
+body {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: @header-height auto;
+    grid-template-areas:
+    "header   header"
+    "sidebar  main";
+
+    .header  { grid-area: header;  }
+    .sidebar { grid-area: sidebar; }
+}
+
+// the main element holds the primary content of the page,
+// including the article content and sidbar.
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: auto 225px;
+    grid-template-areas: "content outline";
+    max-width: 1000px;
+
+    article { grid-area: content; }
+    aside   { grid-area: outline; }
+}
+
+// on smaller screens the table of contents is hidden due
+// to limited screen space.
+@media only screen and (max-width: 1200px) {
+    main aside {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-areas: "content";
+    }
+}
+
+// if the device size or window size is tablet or below the
+// sidebar is collapsed by default and is positioned absolute
+// when visible. Thus the sidebar is removed from the main
+// grid layout.
+@media screen and
+    (max-width: 800px),
+    (max-device-width: 800px) {
+
+    body {
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: @header-height auto;
+        grid-template-areas:
+        "header"
+        "main";
+    }
+
+    main article {
+        max-width: 800px;
+    }
+
+    main article footer,
+    main article header,
+    main article section {
+        margin-left: 26px;
+        margin-right: 26px;
+    }
+}
