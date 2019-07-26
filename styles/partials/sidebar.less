@@ -27,6 +27,11 @@
             align-items: center;
             cursor: pointer;
             background: data-uri(@sidebar-collapse-icon) no-repeat center center;
+
+            // See https://bit.ly/2Yc95wR
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
         }
     }
 }

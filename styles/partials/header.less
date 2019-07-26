@@ -38,6 +38,11 @@
         width: @logo-width;
         height: @logo-height;
 
+        // See https://bit.ly/2Yc95wR
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+
         img {
             width: @logo-width;
             height: @logo-height;
@@ -54,6 +59,11 @@
         width: @menu-height;
         background: data-uri(@menu-icon) no-repeat center center;
         background-size: @menu-icon-size;
+
+        // See https://bit.ly/2Yc95wR
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
     }
 
     .title {
