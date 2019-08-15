@@ -14,8 +14,9 @@
     </li>
     {{ else }}
 
+    {{ $expand := (eq $selected.Params.expand .Node.Path) }}
     <li{{ if eq $selected .Node }} class="selected active"{{end}}>
-        <details{{ if .Node.IsAncestor $selected }} open{{ end }}>
+        <details{{ if or (.Node.IsAncestor $selected) ($expand) }} open{{ end }}>
             <summary>
                 <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
             </summary>
