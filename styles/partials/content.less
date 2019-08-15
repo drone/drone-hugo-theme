@@ -79,7 +79,7 @@
         margin: 0px;
         display: inline-block;
         padding: 0px 6px;
-        font-size: 80%;
+        font-size: 85%;
         border-radius: 3px;
         font-family: @font-mono;
     }
@@ -97,11 +97,6 @@
         overflow: hidden;
         overflow-y: hidden;
         overflow-x: auto;
-
-        .hl {
-            display: block;
-            background: #eceef2;
-        }
     }
 
     // chrome syntax highlighing.
@@ -112,6 +107,17 @@
 
         .lntable {
             width: 100%;
+        }
+
+        td:last-of-type {
+            width: 100%;
+
+            .hl {
+                display: block;
+                // background: #e0eef0;
+                // color: #0CA4A5;
+                color: #2364d2;
+            }
         }
 
         // line numbers

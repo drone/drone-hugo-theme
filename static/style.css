@@ -557,7 +557,7 @@ main aside {
   margin: 0px;
   display: inline-block;
   padding: 0px 6px;
-  font-size: 80%;
+  font-size: 85%;
   border-radius: 3px;
   font-family: 'Roboto Mono', monospace;
 }
@@ -574,10 +574,6 @@ main aside {
   overflow-y: hidden;
   overflow-x: auto;
 }
-.content pre > code .hl {
-  display: block;
-  background: #eceef2;
-}
 .content .chroma {
   overflow: hidden;
   overflow-y: hidden;
@@ -585,6 +581,13 @@ main aside {
 }
 .content .chroma .lntable {
   width: 100%;
+}
+.content .chroma td:last-of-type {
+  width: 100%;
+}
+.content .chroma td:last-of-type .hl {
+  display: block;
+  color: #2364d2;
 }
 .content .chroma .lnt {
   color: #c1c7cd;
@@ -821,6 +824,26 @@ main aside {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
 }
+.sidebar .back {
+  padding: 0px 0px 0px 24px;
+}
+.sidebar .back a {
+  align-content: center;
+  align-items: center;
+  border-bottom: 1px solid #EFF0F2;
+  box-sizing: border-box;
+  color: #54667e;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 55px;
+  padding-left: 54px;
+  text-decoration: none;
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%2354667e%22%20d%3D%22M21%2C11H6.83L10.41%2C7.41L9%2C6L3%2C12L9%2C18L10.41%2C16.58L6.83%2C13H21V11Z%22%20%2F%3E%0A%3C%2Fsvg%3E") no-repeat 16px center;
+}
+.sidebar .back a:hover {
+  background-color: #ECEEF2;
+}
 @media screen and (max-width: 800px), (max-device-width: 800px) {
   .sidebar {
     position: fixed;
@@ -847,6 +870,75 @@ main aside {
     border-bottom: none;
     transition: left 0.2s ease-in-out;
   }
+}
+.content.spec p > code {
+  line-height: 20px;
+}
+.content.spec p > a > code {
+  line-height: 20px;
+  color: #2364d2;
+}
+.content.spec .kr {
+  font-weight: 600;
+  color: #AA00FF;
+}
+.content.spec .nx,
+.content.spec .kt {
+  color: #2364d2;
+}
+.sidebar #TableOfContents {
+  padding: 32px 0px 32px 24px;
+}
+.sidebar #TableOfContents ul {
+  margin: 0px;
+  counter-reset: item;
+}
+.sidebar #TableOfContents > ul > li > ul {
+  margin: 0px;
+  margin-bottom: 24px;
+}
+.sidebar #TableOfContents li a {
+  box-sizing: border-box;
+  color: #939ba9;
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 7px 24px 7px 16px;
+  text-decoration: none;
+  user-select: none;
+}
+.sidebar #TableOfContents li a code {
+  color: #2364d2;
+  font-family: 'Roboto Mono', monospace;
+}
+.sidebar #TableOfContents li a:hover {
+  background: #ECEEF2;
+  cursor: pointer;
+}
+.sidebar #TableOfContents > ul > li {
+  margin-bottom: 20px;
+  counter-increment: item;
+}
+.sidebar #TableOfContents > ul > li > a {
+  color: #54667e;
+  line-height: 22px;
+  padding: 7px 24px 7px 16px;
+}
+.sidebar #TableOfContents > ul > li > a:before {
+  display: inline-block;
+  width: 40px;
+  content: counters(item, ".") " ";
+  font-size: 16px;
+}
+.sidebar #TableOfContents > ul > li > ul > li {
+  counter-increment: item;
+}
+.sidebar #TableOfContents > ul > li > ul > li > a:before {
+  display: inline-block;
+  width: 40px;
+  content: counters(item, ".") " ";
+  font-size: 15px;
 }
 .tree {
   padding: 32px 0px 32px 24px;

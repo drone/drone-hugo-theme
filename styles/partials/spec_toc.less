@@ -1,0 +1,68 @@
+.sidebar #TableOfContents {
+    padding: 32px 0px 32px 24px;
+
+    ul {
+        margin: 0px;
+        counter-reset: item;
+    }
+
+    // override the default style to remove the border
+    // for the root list item. The border helps signify
+    // depth and does not apply to the root item.s
+    &> ul > li > ul {
+        margin: 0px;
+        margin-bottom: 24px;
+    }
+
+    li a {
+        box-sizing: border-box;
+        color: #939ba9;
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        padding: 7px 24px 7px 16px;
+        text-decoration: none;
+        user-select: none;
+
+        code {
+            color: #2364d2;
+            font-family: @font-mono;
+        }
+
+        &:hover {
+            background: @node-background-hover;
+            cursor: pointer;
+        }
+    }
+
+    &> ul > li {
+        margin-bottom: 20px;
+        counter-increment: item;
+
+        &> a {
+            // color: #1E375A;
+            color: #54667e;
+            line-height: 22px;
+            padding: 7px 24px 7px 16px;
+        }
+
+        &> a:before {
+            display: inline-block;
+            width: 40px;
+            content: counters(item, ".") " ";
+            font-size: 16px;
+        }
+    }
+
+    &> ul > li > ul > li {
+        counter-increment: item;
+        &> a:before {
+            display: inline-block;
+            width: 40px;
+            content: counters(item, ".") " ";
+            font-size: 15px;
+        }
+    }
+
+}
