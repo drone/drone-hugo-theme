@@ -649,6 +649,12 @@ main aside {
 .content > table th {
   background: #f7f7f9;
 }
+.content dt {
+  font-weight: 600;
+}
+.content dd {
+  margin-bottom: 24px;
+}
 .content blockquote {
   color: #788497;
   margin: 0px 0px 24px;

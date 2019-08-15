@@ -2,12 +2,14 @@
 {{ define "branch" }}
     {{ $selected := .Selected }}
 
+    {{ $hide_children := .Node.Params.hide_children }}
+
     {{ if and (eq (len .Node.Pages) 0) (eq (len .Node.Sections) 0) }}
-    <li{{ if eq $selected .Node }} class="selected active"{{end}}>
+    <li{{ if eq $selected .Node }} class="selected active"{{ else if $hide_children }} class="hide_children"{{end}}>
         <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
     </li>
     {{ else if .Node.Params.hide_children }}
-    <li{{ if eq $selected .Node }} class="selected active hide_children"{{ else if .Node.IsAncestor $selected }} class="selected active hide_children"{{ end }}>
+    <li{{ if eq $selected .Node }} class="selected active hide_children"{{ else if .Node.IsAncestor $selected }} class="selected active hide_children"{{ else }} class="hide_children"{{ end }}>
         <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
     </li>
     {{ else }}
