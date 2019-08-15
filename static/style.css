@@ -310,11 +310,13 @@ main aside {
   margin: 40px 0px;
 }
 .table-of-contents {
-  padding-left: 24px;
-  margin-right: 24px;
   border-color: #EFF0F2;
   border-width: 0px 0px 0px 1px;
   border-style: solid;
+  margin-right: 24px;
+  padding-left: 24px;
+  position: sticky;
+  top: 30px;
 }
 .table-of-contents li a {
   display: block;
@@ -353,6 +355,28 @@ main aside {
   bottom: 0px;
   left: 0px;
   width: 20px;
+}
+.breadcrumb {
+  margin-bottom: 10px;
+}
+.crumb {
+  display: inline-block;
+}
+.crumb a,
+.crumb a:visited {
+  text-decoration: none;
+  color: #939ba9;
+  display: flex;
+  align-items: center;
+}
+.crumb a:after {
+  margin-left: 5px;
+  margin-right: 5px;
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%239DAAB6%22%20d%3D%22M8.59%2C16.58L13.17%2C12L8.59%2C7.41L10%2C6L16%2C12L10%2C18L8.59%2C16.58Z%22%20%2F%3E%0A%3C%2Fsvg%3E") no-repeat center center;
+  width: 24px;
+  height: 24px;
+  content: "";
+  display: inline-block;
 }
 .next-prev {
   display: grid;
@@ -880,7 +904,6 @@ main aside {
 }
 .content.spec .kr {
   font-weight: 600;
-  color: #AA00FF;
 }
 .content.spec .nx,
 .content.spec .kt {
@@ -910,6 +933,7 @@ main aside {
 }
 .sidebar #TableOfContents li a code {
   color: #2364d2;
+  color: #1E375A;
   font-family: 'Roboto Mono', monospace;
 }
 .sidebar #TableOfContents li a:hover {
@@ -967,6 +991,21 @@ main aside {
 .tree li a:hover {
   background: #ECEEF2;
   cursor: pointer;
+}
+.tree li.hide_children a {
+  position: relative;
+}
+.tree li.hide_children a:after {
+  content: "";
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%239DAAB6%22%20d%3D%22M8.59%2C16.58L13.17%2C12L8.59%2C7.41L10%2C6L16%2C12L10%2C18L8.59%2C16.58Z%22%20%2F%3E%0A%3C%2Fsvg%3E") no-repeat center center;
+  background-size: 22px;
+  position: absolute;
+  margin-right: 16px;
+  width: 36px;
+  height: 36px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
 }
 .tree details summary {
   box-sizing: border-box;

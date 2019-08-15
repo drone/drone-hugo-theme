@@ -7,7 +7,7 @@
         <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
     </li>
     {{ else if .Node.Params.hide_children }}
-    <li{{ if eq $selected .Node }} class="selected active"{{ else if .Node.IsAncestor $selected }} class="selected active"{{ end }}>
+    <li{{ if eq $selected .Node }} class="selected active hide_children"{{ else if .Node.IsAncestor $selected }} class="selected active hide_children"{{ end }}>
         <a href="{{ .Node.URL }}">{{ .Node.Title }}</a>
     </li>
     {{ else }}

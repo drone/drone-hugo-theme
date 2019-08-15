@@ -1,0 +1,6 @@
+<div class="breadcrumb">
+    <div class="crumb">
+        <a href="{{ .Site.Home.Permalink }}">{{ .Site.Home.Title }}</a>
+    </div>
+    {{ partial "breadcrumb-list.html" (dict "page" . "sections" .Site.Sections) }}
+</div>

@@ -1,0 +1,23 @@
+.breadcrumb {
+    margin-bottom: 10px;
+ }
+ .crumb {
+     display: inline-block;
+
+    a, a:visited {
+        text-decoration: none;
+        color: #939ba9;
+        display: flex;
+        align-items: center;
+    }
+
+    a:after {
+        margin-left: 5px;
+        margin-right: 5px;
+        background: data-uri("icons/caret.svg") no-repeat center center;
+        width: 24px;
+        height: 24px;
+        content: "";
+        display: inline-block;
+    }
+}

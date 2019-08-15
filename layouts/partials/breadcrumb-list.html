@@ -1,0 +1,9 @@
+{{- $page := .page -}}
+{{- range .sections }}
+    {{- if and (.IsAncestor $page) (ne $page .) }}
+        <div class="crumb">
+            <a href="{{.Permalink}}">{{ .Title }}</a>
+        </div>
+        {{ partial "breadcrumb-list.html" (dict "page" $page "sections" .Sections) }}
+    {{- end -}}
+{{- end -}}
