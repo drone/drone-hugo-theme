@@ -655,6 +655,16 @@ main aside {
 .content dd {
   margin-bottom: 24px;
 }
+.language-diff .gd,
+.language-patch .gd {
+  color: #ff4164;
+  background: #f9d6df;
+}
+.language-diff .gi,
+.language-patch .gi {
+  color: #0d724a;
+  background: #ddf3eb;
+}
 .content blockquote {
   color: #788497;
   margin: 0px 0px 24px;
