@@ -888,6 +888,7 @@ main aside {
   margin-top: 40px;
   padding: 0px 0px 0px 24px;
 }
+.sidebar > .title span,
 .sidebar > .title a,
 .sidebar > .title a:visited {
   color: #939ba9;
