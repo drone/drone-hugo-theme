@@ -666,6 +666,13 @@ main aside {
   color: #0d724a;
   background: #ddf3eb;
 }
+.language-tcl .nv,
+.language-tcl .mi {
+  color: #1e375a;
+}
+.language-tcl .c {
+  color: #c1c7cd;
+}
 .content blockquote {
   color: #788497;
   margin: 0px 0px 24px;
