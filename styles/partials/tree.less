@@ -73,6 +73,22 @@
         }
     }
 
+    li.open-in-new {
+        position: relative;
+        &:after {
+            content: "";
+            background: data-uri("icons/open-in-new.svg") no-repeat center center;
+            background-size: 16px;
+            position: absolute;
+            margin-right: 16px;
+            width: 36px;
+            height: 36px;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+    }
+
     details summary {
         box-sizing: border-box;
         list-style-image: none;
