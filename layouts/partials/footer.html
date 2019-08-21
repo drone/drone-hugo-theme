@@ -32,4 +32,54 @@
     debug: false
   });
 </script>
+{{ else }}
+<script src="/autocomplete.js"></script>
+<script src="/fuse.js"></script>
+<script>
+var options = {
+  shouldSort: true,
+  tokenize: false,
+  threshold: 0.6,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 32,
+  minMatchCharLength: 1,
+  keys: [
+    "title",
+    "tags",
+    "content"
+  ]
+};
+
+var index;
+autocomplete('#search-input', {
+    hint: true,
+    debounce: 250,
+    cache: true,
+    debug: window.location.hostname === "localhost",
+}, [
+    {
+        displayKey: function(suggestion) {
+            return suggestion.title
+        },
+        source: function(query, callback) {
+            if (!index) {
+                fetch("/index.json")
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(items) {
+                    index = new Fuse(items, options);
+                    var results = index.search(query);
+                    callback(results && results.slice(0, 5));
+                });
+            } else {
+                var results = index.search(query);
+                callback(results && results.slice(0, 5));
+            }
+        }
+    }]).on('autocomplete:selected', function(event, suggestion, dataset) {
+        window.location.href = suggestion.permalink;
+    });
+</script>
 {{ end }}

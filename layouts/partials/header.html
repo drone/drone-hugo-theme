@@ -6,8 +6,6 @@
             </a>
         </div>
         <div class="search">
-            {{ if .Site.Params.algolia_key }}
-            <input type="text" placeholder="Search the {{ .Site.Title }} documentation ..."/>
-            {{ end }}
+            <input type="text" id="search-input" placeholder="Search the {{ .Site.Title }} documentation ..."/>
         </div>
     </header>
