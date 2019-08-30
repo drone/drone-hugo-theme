@@ -250,6 +250,21 @@ main aside {
   width: 96px;
   height: 96px;
 }
+@media screen and (max-width: 950px), (max-device-width: 950px) {
+  .home .sections .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 800px), (max-device-width: 800px) {
+  .home .sections {
+    margin: 0px;
+    margin-bottom: 20px;
+    padding: 0px 20px;
+  }
+  .home .sections .cards {
+    grid-template-columns: 1fr;
+  }
+}
 .alert {
   box-sizing: border-box;
   display: block;
@@ -277,6 +292,10 @@ main aside {
 .alert.security {
   border-color: #f47100;
   background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%3Cpath%20fill%3D%22%23f47100%22%20d%3D%22M21%2C11C21%2C16.55%2017.16%2C21.74%2012%2C23C6.84%2C21.74%203%2C16.55%203%2C11V5L12%2C1L21%2C5V11M12%2C21C15.75%2C20%2019%2C15.54%2019%2C11.22V6.3L12%2C3.18L5%2C6.3V11.22C5%2C15.54%208.25%2C20%2012%2C21M11%2C7H13V13H11V7M11%2C15H13V17H11V15Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
+}
+.alert.nocloud {
+  border-color: #54667e;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%3F%3E%0A%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%20%20%3Cpath%20fill%3D%22%2354667e%22%20d%3D%22M7.73%2C10L15.73%2C18H6A4%2C4%200%200%2C1%202%2C14A4%2C4%200%200%2C1%206%2C10M3%2C5.27L5.75%2C8C2.56%2C8.15%200%2C10.77%200%2C14A6%2C6%200%200%2C0%206%2C20H17.73L19.73%2C22L21%2C20.73L4.27%2C4M19.35%2C10.03C18.67%2C6.59%2015.64%2C4%2012%2C4C10.5%2C4%209.15%2C4.43%208%2C5.17L9.45%2C6.63C10.21%2C6.23%2011.08%2C6%2012%2C6A5.5%2C5.5%200%200%2C1%2017.5%2C11.5V12H19A3%2C3%200%200%2C1%2022%2C15C22%2C16.13%2021.36%2C17.11%2020.44%2C17.62L21.89%2C19.07C23.16%2C18.16%2024%2C16.68%2024%2C15C24%2C12.36%2021.95%2C10.22%2019.35%2C10.03Z%22%20%2F%3E%0A%3C%2Fsvg%3E");
 }
 .alert.warning,
 .alert.warn {
@@ -1094,6 +1113,7 @@ main aside {
   top: 0px;
   right: 0px;
   bottom: 0px;
+  pointer-events: none;
 }
 .tree details summary {
   box-sizing: border-box;

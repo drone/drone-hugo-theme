@@ -51,3 +51,25 @@
     }
 }
 
+@media screen and
+    (max-width: 950px),
+    (max-device-width: 950px) {
+
+    .home .sections .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and
+    (max-width: 800px),
+    (max-device-width: 800px) {
+
+    .home .sections {
+        margin: 0px;
+        margin-bottom: 20px;
+        padding: 0px 20px;
+        .cards {
+            grid-template-columns: 1fr;
+        }
+    }
+}

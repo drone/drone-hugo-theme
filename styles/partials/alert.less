@@ -2,12 +2,14 @@
 @alert-color-success: #26CB7C;
 @alert-color-warning: #F77D05;
 @alert-color-info: #3884ff;
+@alert-color-cloud-off: #54667e;
 
 @alert-image-danger: "icons/alert_error.svg";
 @alert-image-success: "icons/alert_check.svg";
 @alert-image-warning: "icons/alert_warn.svg";
 @alert-image-security: "icons/alert_shield.svg";
 @alert-image-info: "icons/alert_info.svg";
+@alert-image-cloud-off: "icons/cloud_disabled.svg";
 
 @alert-border-radius: 3px;
 @alert-border-width: 0px 0px 0px 4px;
@@ -48,6 +50,11 @@
         background-image: data-uri(@alert-image-security);
     }
     
+    &.nocloud {
+        border-color: @alert-color-cloud-off;
+        background-image: data-uri(@alert-image-cloud-off);
+    }
+
     &.warning,
     &.warn {
         border-color: @alert-color-warning;
